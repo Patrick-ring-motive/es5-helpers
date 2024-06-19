@@ -181,3 +181,5 @@ Object.defineProperty(Sat, "size", {
     this.length=s;
   }
 });
+
+function xx(a,b){  for(var i=0;i<b;i++){a*=a;}return a;}
