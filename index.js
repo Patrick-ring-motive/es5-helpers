@@ -155,3 +155,29 @@ var Vector = Seq;
 var List = Seq;
 var ArrayList = Seq;
 var ArraySeq = Seq;
+
+
+
+function Set(x){
+    var Sit = {};
+    var Sat = [];
+    Object.defineProperty(Sat, "size", {
+      get() {
+        return this.length;
+      },
+      set(s) {
+        this.length=s;
+      }
+    });
+    for(var i=0;i<x.length;i++){Sit[x[i]]=x[i];}
+    for(var v in Sit){Sat.push(Sit[v]);}
+    return Sat;
+}
+Object.defineProperty(Sat, "size", {
+  get() {
+    return this.length;
+  },
+  set(s) {
+    this.length=s;
+  }
+});
