@@ -4,10 +4,12 @@ function b0(b) {
   return parseInt(b, 2);
 }
 var B0 = b0;
+
 function o0(o) {
   return parseInt(o, 8);
 }
 var O0 = o0;
+
 function x0(x) {
   return parseInt(x, 16);
 }
@@ -28,8 +30,10 @@ console.log(octalNumber5);
 
 /** Optional Chaining example */
 var obj = undefined;
-/*es6:*/ let a6 = obj?.prop;
-/*es5:*/ var a5 = (obj || {}).prop;
+/*es6:*/
+let a6 = obj?.prop;
+/*es5:*/
+var a5 = (obj || {}).prop;
 
 /** Block scope loop examples
  *es5 only scopes varables to functions. We can use IIFE to create a block scope loop
@@ -41,7 +45,7 @@ for (let i = 0; i < 10; i++) {
 }
 
 /*es5 block scoped loop index*/
-(function () {
+(function() {
   for (var i = 0; i < 10; i++) {
     console.log(i);
   }
@@ -55,10 +59,10 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 /*es5 block scoped loop index and inner block*/
-(function () {
+(function() {
   var arr = ["a", "b", "c"];
   for (var i = 0; i < arr.length; i++) {
-    (function () {
+    (function() {
       var x = arr[i];
       console.log(x);
     })();
@@ -82,8 +86,8 @@ function Þ(x, y) {
       y +
       "};lambda;"
     )
-      .replace(/ì/g, "'")
-      .replace(/æ/g, "argumemts"),
+    .replace(/ì/g, "'")
+    .replace(/æ/g, "argumemts"),
   );
 }
 
@@ -100,8 +104,8 @@ function þ(x, y, z) {
       z +
       "};lambda;"
     )
-      .replace(/ì/g, "'")
-      .replace(/æ/g, "argumemts"),
+    .replace(/ì/g, "'")
+    .replace(/æ/g, "argumemts"),
   );
 }
 
@@ -147,7 +151,7 @@ var str5 = $("This ", 5, " is a string");
 /* These functions are specifically for running nashorn inside of Scala. Scala lists are coerced into 'List(a,b)' so this conveniently transforms them into js arrays.*/
 
 function Seq() {
-  return [].map.call(arguments, function (x) {
+  return [].map.call(arguments, function(x) {
     return x;
   });
 }
@@ -156,30 +160,37 @@ var List = Seq;
 var ArrayList = Seq;
 var ArraySeq = Seq;
 
-
-
-function Set(x){
-    var Sit = {};
-    var Sat = [];
-    Object.defineProperty(Sat, "size", {
-      get() {
-        return this.length;
-      },
-      set(s) {
-        this.length=s;
-      }
-    });
-    for(var i=0;i<x.length;i++){Sit[x[i]]=x[i];}
-    for(var v in Sit){Sat.push(Sit[v]);}
-    return Sat;
+function Set(x) {
+  var Sit = {};
+  var Sat = [];
+  Object.defineProperty(Sat, "size", {
+    get() {
+      return this.length;
+    },
+    set(s) {
+      this.length = s;
+    }
+  });
+  for (var i = 0; i < x.length; i++) {
+    Sit[x[i]] = x[i];
+  }
+  for (var v in Sit) {
+    Sat.push(Sit[v]);
+  }
+  return Sat;
 }
 Object.defineProperty(Sat, "size", {
   get() {
     return this.length;
   },
   set(s) {
-    this.length=s;
+    this.length = s;
   }
 });
 
-function xx(a,b){  for(var i=0;i<b;i++){a*=a;}return a;}
+function xx(a, b) {
+  for (var i = 0; i < b; i++) {
+    a *= a;
+  }
+  return a;
+}
